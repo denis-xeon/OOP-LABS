@@ -38,23 +38,20 @@ public class Main {
             System.exit(0);
         }
 
+        if(a <= C && C <= n){
+            System.out.println("Cannot divide by zero");
+            System.exit(0);
+        }
+        if(b <= 0 && 0 <= m){
+            System.out.println("Cannot divide by zero");
+            System.exit(0);
+        }
+
         float S = 0;
 
         for(float i = a; i <= n; i++){
-            if(i-C == 0){
-                System.out.println("Cannot divide by zero");
-                System.exit(0);
-            }
-            else {
-                for(float j = b; j <= m; j++){
-                    if(j == 0){
-                        System.out.println("Cannot divide by zero");
-                        System.exit(0);
-                    }
-                    else {
-                        S += (i % j)/(i - C);
-                    }
-                }
+            for(float j = b; j <= m; j++){
+                S += (i % j)/(i - C);
             }
         }
         System.out.println("S = " + S);
